@@ -9,20 +9,20 @@
 
 <form action="/result" method="post">
 
-    {% for q in questions %}
-        <p><b>{{ q.question }}</b></p>
+{% for q in questions %}
+    <p><b>{{ q.question }}</b></p>
 
-        {% set q_index = loop.index0 %}
+    {% set idx = loop.index0 %}
 
-        {% for opt in q.options %}
-            <input type="radio" name="q{{ q_index }}" value="{{ opt }}" required>
-            {{ opt }}<br>
-        {% endfor %}
-
-        <br>
+    {% for opt in q.options %}
+        <input type="radio" name="q{{ idx }}" value="{{ opt }}" required>
+        {{ opt }}<br>
     {% endfor %}
 
-    <button type="submit">Submit</button>
+    <br>
+{% endfor %}
+
+<button type="submit">Submit</button>
 
 </form>
 
