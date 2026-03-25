@@ -1,18 +1,78 @@
 <!DOCTYPE html>
 <html>
+<head>
+<title>Cloud Tips</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI';
+    background: linear-gradient(135deg,#ff7e5f,#feb47b);
+    color: white;
+}
+
+.container {
+    padding: 40px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+button {
+    margin-top: 30px;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: #fff;
+    cursor: pointer;
+}
+</style>
+
+</head>
+
 <body>
 
-<h1>Cloud Tips</h1>
+<div class="container">
 
-<ul>
-<li>Cloud provides scalability</li>
-<li>SaaS = ready-to-use apps</li>
-<li>PaaS = platform for developers</li>
-<li>IaaS = infrastructure services</li>
-<li>Use HTTPS for security</li>
-</ul>
+<h1>⚡ Cloud Quick Tips</h1>
 
-<a href="/">Back</a>
+<div class="grid">
+
+<div class="card">☁️ Cloud provides scalability</div>
+<div class="card">💻 SaaS = Ready apps</div>
+<div class="card">⚙️ PaaS = Platform for devs</div>
+<div class="card">🖥️ IaaS = Infrastructure</div>
+<div class="card">🔐 Use HTTPS for security</div>
+<div class="card">📦 Backup data regularly</div>
+<div class="card">⚡ Use CDN for speed</div>
+<div class="card">🌍 Choose nearest region</div>
+<div class="card">📊 Monitor performance</div>
+
+</div>
+
+<a href="/"><button>Back Home</button></a>
+
+</div>
 
 </body>
 </html>
