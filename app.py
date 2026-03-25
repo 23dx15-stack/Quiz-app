@@ -8,59 +8,59 @@ scores = {}
 
 # EASY (15)
 easy = [
-{"question":"Cloud means?","options":["Internet","CPU","RAM","None"],"answer":"Internet"},
-{"question":"AWS stands for?","options":["Amazon Web Services","Web System","None","Server"],"answer":"Amazon Web Services"},
-{"question":"Cloud uses?","options":["Internet","Disk","USB","None"],"answer":"Internet"},
-{"question":"Which is SaaS?","options":["Gmail","CPU","Disk","None"],"answer":"Gmail"},
-{"question":"Azure by?","options":["Microsoft","Google","Amazon","IBM"],"answer":"Microsoft"},
-{"question":"Cloud storage?","options":["Online","Offline","USB","None"],"answer":"Online"},
-{"question":"Cloud gives?","options":["Scalability","Speed","Cost","All"],"answer":"All"},
-{"question":"Cloud access?","options":["Internet","USB","Offline","None"],"answer":"Internet"},
-{"question":"Which cloud?","options":["AWS","Laptop","USB","None"],"answer":"AWS"},
-{"question":"Cloud is?","options":["Online","Offline","Local","None"],"answer":"Online"},
-{"question":"Cloud uses?","options":["Server","USB","Cable","None"],"answer":"Server"},
-{"question":"Cloud data?","options":["Remote","Local","USB","None"],"answer":"Remote"},
-{"question":"Which is GCP?","options":["Google Cloud","Amazon","Azure","None"],"answer":"Google Cloud"},
-{"question":"Cloud benefit?","options":["Flexibility","Speed","Cost","All"],"answer":"All"},
-{"question":"Cloud service?","options":["Online","Offline","USB","None"],"answer":"Online"}
+{"question":"Cloud computing means?","options":["Internet-based service","Local storage","USB storage","None"],"answer":"Internet-based service"},
+{"question":"AWS stands for?","options":["Amazon Web Services","Web App System","Advanced Web Service","None"],"answer":"Amazon Web Services"},
+{"question":"Cloud uses?","options":["Internet","Cable","USB","Disk"],"answer":"Internet"},
+{"question":"Which is SaaS example?","options":["Gmail","CPU","RAM","Hard disk"],"answer":"Gmail"},
+{"question":"Azure is owned by?","options":["Microsoft","Google","Amazon","IBM"],"answer":"Microsoft"},
+{"question":"Cloud storage means?","options":["Online storage","USB storage","Offline","None"],"answer":"Online storage"},
+{"question":"Cloud gives scalability means?","options":["Increase resources","Delete data","Stop system","None"],"answer":"Increase resources"},
+{"question":"Which cloud provider is Google?","options":["GCP","AWS","Azure","None"],"answer":"GCP"},
+{"question":"Cloud access requires?","options":["Internet","USB","Cable","None"],"answer":"Internet"},
+{"question":"Which is public cloud?","options":["AWS","Laptop","Desktop","None"],"answer":"AWS"},
+{"question":"Cloud data stored in?","options":["Remote server","Local PC","USB","CD"],"answer":"Remote server"},
+{"question":"Cloud computing is?","options":["Online service","Offline tool","Device","None"],"answer":"Online service"},
+{"question":"Which device uses cloud?","options":["Mobile","Laptop","Tablet","All"],"answer":"All"},
+{"question":"Cloud helps in?","options":["Storage","Processing","Backup","All"],"answer":"All"},
+{"question":"Cloud platform example?","options":["AWS","MS Word","Notepad","Excel"],"answer":"AWS"}
 ]
 
 # MEDIUM (15)
 medium = [
-{"question":"SaaS full form?","options":["Software as a Service","None","System","Server"],"answer":"Software as a Service"},
-{"question":"PaaS full form?","options":["Platform as a Service","Program","None","Server"],"answer":"Platform as a Service"},
-{"question":"IaaS full form?","options":["Infrastructure as a Service","Internet","None","Server"],"answer":"Infrastructure as a Service"},
-{"question":"Which provides VM?","options":["IaaS","SaaS","PaaS","None"],"answer":"IaaS"},
-{"question":"Which provides apps?","options":["SaaS","PaaS","IaaS","None"],"answer":"SaaS"},
-{"question":"Which handles platform?","options":["PaaS","IaaS","SaaS","None"],"answer":"PaaS"},
-{"question":"AWS EC2 is?","options":["Compute","Storage","Network","None"],"answer":"Compute"},
-{"question":"AWS S3 is?","options":["Storage","Compute","DB","None"],"answer":"Storage"},
-{"question":"Cloud region?","options":["Data center","City","Country","None"],"answer":"Data center"},
-{"question":"Load balancing?","options":["Distribute load","Store data","Delete","None"],"answer":"Distribute load"},
-{"question":"Cloud scaling?","options":["Auto scale","Manual","None","USB"],"answer":"Auto scale"},
-{"question":"Cloud security?","options":["Encryption","Firewall","Backup","All"],"answer":"All"},
-{"question":"Virtualization?","options":["VM creation","Delete","None","USB"],"answer":"VM creation"},
-{"question":"Cloud protocol?","options":["HTTP","HTTPS","FTP","All"],"answer":"All"},
-{"question":"Cloud OS?","options":["Linux","Windows","Both","None"],"answer":"Both"}
+{"question":"SaaS full form?","options":["Software as a Service","System as a Service","Server as a Service","None"],"answer":"Software as a Service"},
+{"question":"PaaS full form?","options":["Platform as a Service","Process as a Service","Program as a Service","None"],"answer":"Platform as a Service"},
+{"question":"IaaS full form?","options":["Infrastructure as a Service","Internet as a Service","Input as a Service","None"],"answer":"Infrastructure as a Service"},
+{"question":"Which service gives virtual machines?","options":["IaaS","PaaS","SaaS","None"],"answer":"IaaS"},
+{"question":"Which service gives ready apps?","options":["SaaS","PaaS","IaaS","None"],"answer":"SaaS"},
+{"question":"AWS EC2 is used for?","options":["Compute","Storage","Database","None"],"answer":"Compute"},
+{"question":"AWS S3 is used for?","options":["Storage","Compute","Network","None"],"answer":"Storage"},
+{"question":"Cloud region refers to?","options":["Data center location","City","Country","None"],"answer":"Data center location"},
+{"question":"Load balancing means?","options":["Distribute traffic","Store data","Delete files","None"],"answer":"Distribute traffic"},
+{"question":"Cloud scaling is?","options":["Increase resources","Decrease speed","Delete data","None"],"answer":"Increase resources"},
+{"question":"Virtualization means?","options":["Creating virtual machines","Deleting data","Coding","None"],"answer":"Creating virtual machines"},
+{"question":"Which ensures security?","options":["Encryption","Firewall","Backup","All"],"answer":"All"},
+{"question":"Cloud OS supports?","options":["Linux","Windows","Both","None"],"answer":"Both"},
+{"question":"HTTPS is used for?","options":["Secure communication","Data delete","Storage","None"],"answer":"Secure communication"},
+{"question":"Which service stores database?","options":["RDS","EC2","Lambda","S3"],"answer":"RDS"}
 ]
 
 # HARD (15)
 hard = [
-{"question":"AWS Lambda is?","options":["Serverless","Storage","Compute","None"],"answer":"Serverless"},
-{"question":"CDN stands for?","options":["Content Delivery Network","None","Server","Cloud"],"answer":"Content Delivery Network"},
-{"question":"CloudWatch is?","options":["Monitoring","Storage","Compute","None"],"answer":"Monitoring"},
-{"question":"Elasticity means?","options":["Auto scale","Manual","None","USB"],"answer":"Auto scale"},
-{"question":"Fault tolerance?","options":["System continues","Stops","Delete","None"],"answer":"System continues"},
-{"question":"SLA full form?","options":["Service Level Agreement","None","Server","System"],"answer":"Service Level Agreement"},
-{"question":"Edge computing?","options":["Near data","Central","Offline","None"],"answer":"Near data"},
-{"question":"Cloud migration?","options":["Move to cloud","Delete","Install","None"],"answer":"Move to cloud"},
-{"question":"DevOps?","options":["Development+Operations","Testing","Design","None"],"answer":"Development+Operations"},
-{"question":"CI/CD?","options":["Continuous Integration & Delivery","None","Server","System"],"answer":"Continuous Integration & Delivery"},
-{"question":"Hybrid cloud?","options":["Public+Private","Public","Private","None"],"answer":"Public+Private"},
-{"question":"Private cloud?","options":["Single org","Public","Hybrid","None"],"answer":"Single org"},
-{"question":"Public cloud?","options":["Shared","Private","None","Local"],"answer":"Shared"},
-{"question":"Cloud backup?","options":["Online","Offline","USB","None"],"answer":"Online"},
-{"question":"Cloud monitoring?","options":["Tracking","Deleting","None","USB"],"answer":"Tracking"}
+{"question":"AWS Lambda is an example of?","options":["Serverless computing","Storage","Database","None"],"answer":"Serverless computing"},
+{"question":"CDN stands for?","options":["Content Delivery Network","Cloud Data Node","Central Data Network","None"],"answer":"Content Delivery Network"},
+{"question":"CloudWatch is used for?","options":["Monitoring","Storage","Compute","None"],"answer":"Monitoring"},
+{"question":"Elasticity means?","options":["Auto scaling","Manual scaling","No scaling","None"],"answer":"Auto scaling"},
+{"question":"Fault tolerance means?","options":["System continues working","System stops","Deletes data","None"],"answer":"System continues working"},
+{"question":"SLA full form?","options":["Service Level Agreement","System Level Access","Storage Level Access","None"],"answer":"Service Level Agreement"},
+{"question":"Edge computing means?","options":["Processing near data","Central processing","Offline","None"],"answer":"Processing near data"},
+{"question":"Cloud migration means?","options":["Move apps to cloud","Delete apps","Install apps","None"],"answer":"Move apps to cloud"},
+{"question":"DevOps stands for?","options":["Development + Operations","Design + Operations","Dev + Output","None"],"answer":"Development + Operations"},
+{"question":"CI/CD means?","options":["Continuous Integration & Delivery","Cloud Input Data","Central Integration Data","None"],"answer":"Continuous Integration & Delivery"},
+{"question":"Hybrid cloud means?","options":["Public + Private","Public only","Private only","None"],"answer":"Public + Private"},
+{"question":"Private cloud means?","options":["Single organization","Public use","Hybrid use","None"],"answer":"Single organization"},
+{"question":"Public cloud means?","options":["Shared infrastructure","Private use","Local system","None"],"answer":"Shared infrastructure"},
+{"question":"Cloud backup means?","options":["Online backup","Offline backup","USB","None"],"answer":"Online backup"},
+{"question":"Cloud monitoring tools?","options":["CloudWatch","Nagios","Zabbix","All"],"answer":"All"}
 ]
 
 @app.route('/')
