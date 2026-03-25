@@ -1,21 +1,64 @@
 <!DOCTYPE html>
 <html>
+<head>
+<style>
+body {
+    background:#eef2ff;
+    font-family:Arial;
+}
+
+.card {
+    background:white;
+    margin:20px auto;
+    padding:20px;
+    width:70%;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.question {
+    font-size:22px;
+    color:#333;
+}
+
+.option {
+    display:block;
+    margin:10px;
+    padding:10px;
+    border-radius:10px;
+    background:#f0f0ff;
+    cursor:pointer;
+}
+
+.option:hover {
+    background:#667eea;
+    color:white;
+}
+</style>
+</head>
+
 <body>
 
 <form action="/result" method="post">
 
 {% for q in questions %}
-<p>{{ q.question }}</p>
+<div class="card">
+
+<p class="question">{{ q.question }}</p>
 
 {% set idx = loop.index0 %}
 
 {% for opt in q.options %}
-<input type="radio" name="q{{ idx }}" value="{{ opt }}" required> {{ opt }}<br>
+<label class="option">
+<input type="radio" name="q{{ idx }}" value="{{ opt }}" required>
+{{ opt }}
+</label>
 {% endfor %}
 
+</div>
 {% endfor %}
 
-<button>Submit</button>
+<center><button style="padding:15px; background:#764ba2; color:white; border-radius:10px;">Submit</button></center>
 
 </form>
 
