@@ -1,28 +1,137 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Dashboard</title>
+
 <style>
 body {
-    text-align:center;
-    background:#f4f6ff;
+    margin: 0;
+    font-family: 'Segoe UI';
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
 }
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+}
+
+/* Main container */
+.container {
+    text-align: center;
+    padding: 40px;
+}
+
+/* Welcome */
+.welcome {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.sub {
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+/* Cards */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    width: 250px;
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+/* Buttons */
 .btn {
-    padding:15px;
-    margin:10px;
-    background:#667eea;
-    color:white;
-    border:none;
-    border-radius:10px;
-    font-size:18px;
+    padding: 12px 20px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #00ffcc;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #00ccaa;
+}
+
+/* Logout */
+.logout {
+    background: #ff4d4d;
+}
+
+.logout:hover {
+    background: #cc0000;
+}
+
+/* Icons */
+.icon {
+    font-size: 40px;
+    margin-bottom: 10px;
 }
 </style>
+
 </head>
+
 <body>
 
-<h1>Welcome {{ user }}</h1>
+<!-- Navbar -->
+<div class="navbar">
+    <h2>☁️ Cloud Quiz</h2>
+    <a href="/logout"><button class="btn logout">Logout</button></a>
+</div>
 
-<a href="/quiz"><button class="btn">Start Quiz</button></a>
-<a href="/logout"><button class="btn">Logout</button></a>
+<!-- Main -->
+<div class="container">
+
+<div class="welcome">Welcome, {{ user }} 👋</div>
+<div class="sub">Test your knowledge in Cloud Computing 🚀</div>
+
+<div class="cards">
+
+    <div class="card">
+        <div class="icon">🧠</div>
+        <h3>Start Quiz</h3>
+        <p>Challenge yourself with cloud questions</p>
+        <a href="/quiz"><button class="btn">Play Now</button></a>
+    </div>
+
+    <div class="card">
+        <div class="icon">📊</div>
+        <h3>Performance</h3>
+        <p>Track your quiz results</p>
+        <button class="btn">Coming Soon</button>
+    </div>
+
+    <div class="card">
+        <div class="icon">⚡</div>
+        <h3>Quick Tips</h3>
+        <p>Learn cloud concepts fast</p>
+        <button class="btn">Coming Soon</button>
+    </div>
+
+</div>
+
+</div>
 
 </body>
 </html>
