@@ -1,12 +1,94 @@
 <!DOCTYPE html>
 <html>
-<body style="text-align:center; background:#667eea; color:white;">
+<head>
+<title>Select Level</title>
 
-<h1>Select Level</h1>
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI';
+    background: linear-gradient(135deg,#667eea,#764ba2);
+    color: white;
+}
 
-<a href="/quiz/easy"><button>Easy</button></a>
-<a href="/quiz/medium"><button>Medium</button></a>
-<a href="/quiz/hard"><button>Hard</button></a>
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 30px;
+    font-size: 40px;
+}
+
+.cards {
+    display: flex;
+    gap: 30px;
+}
+
+.card {
+    width: 220px;
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.btn {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: #00ffcc;
+    cursor: pointer;
+}
+
+.easy {background: #28a745;}
+.medium {background: #ffc107;}
+.hard {background: #dc3545;}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Choose Your Level 🎯</h1>
+
+<div class="cards">
+
+<div class="card">
+<h2>Easy</h2>
+<p>Basic cloud questions</p>
+<a href="/quiz/easy"><button class="btn easy">Start</button></a>
+</div>
+
+<div class="card">
+<h2>Medium</h2>
+<p>Intermediate concepts</p>
+<a href="/quiz/medium"><button class="btn medium">Start</button></a>
+</div>
+
+<div class="card">
+<h2>Hard</h2>
+<p>Advanced cloud knowledge</p>
+<a href="/quiz/hard"><button class="btn hard">Start</button></a>
+</div>
+
+</div>
+
+</div>
 
 </body>
 </html>
