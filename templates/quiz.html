@@ -1,43 +1,119 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Quiz</title>
+
 <style>
 body {
-    background:#eef2ff;
-    font-family:Arial;
+    font-family: 'Segoe UI';
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    margin: 0;
+    padding: 0;
 }
 
+/* Container */
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Progress bar */
+.progress {
+    height: 10px;
+    background: #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    height: 10px;
+    width: 0%;
+    background: #00ffcc;
+    border-radius: 10px;
+}
+
+/* Glass card */
 .card {
-    background:white;
-    margin:20px auto;
-    padding:20px;
-    width:70%;
-    border-radius:15px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 15px;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
+/* Question */
 .question {
-    font-size:22px;
-    color:#333;
+    font-size: 22px;
+    font-weight: bold;
 }
 
+/* Option card */
 .option {
-    display:block;
-    margin:10px;
-    padding:10px;
-    border-radius:10px;
-    background:#f0f0ff;
-    cursor:pointer;
+    display: block;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.2);
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .option:hover {
-    background:#667eea;
-    color:white;
+    background: #00ffcc;
+    color: black;
+    transform: scale(1.03);
+}
+
+/* Radio hidden */
+input[type="radio"] {
+    display: none;
+}
+
+/* Selected option */
+input[type="radio"]:checked + span {
+    background: #ffcc00;
+    color: black;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Submit button */
+button {
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background: #00ffcc;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #00ccaa;
 }
 </style>
+
+<script>
+let answered = 0;
+function updateProgress() {
+    let total = document.querySelectorAll(".card").length;
+    answered = document.querySelectorAll("input:checked").length;
+    let percent = (answered / total) * 100;
+    document.getElementById("bar").style.width = percent + "%";
+}
+</script>
+
 </head>
 
 <body>
+
+<div class="container">
+
+<div class="progress">
+<div id="bar" class="progress-bar"></div>
+</div>
 
 <form action="/result" method="post">
 
@@ -50,17 +126,19 @@ body {
 
 {% for opt in q.options %}
 <label class="option">
-<input type="radio" name="q{{ idx }}" value="{{ opt }}" required>
-{{ opt }}
+<input type="radio" name="q{{ idx }}" value="{{ opt }}" onchange="updateProgress()" required>
+<span>{{ opt }}</span>
 </label>
 {% endfor %}
 
 </div>
 {% endfor %}
 
-<center><button style="padding:15px; background:#764ba2; color:white; border-radius:10px;">Submit</button></center>
+<center><button>Submit Quiz</button></center>
 
 </form>
+
+</div>
 
 </body>
 </html>
