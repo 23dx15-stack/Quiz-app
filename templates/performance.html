@@ -1,11 +1,65 @@
 <!DOCTYPE html>
 <html>
-<body style="text-align:center;">
+<head>
+<title>Performance</title>
 
-<h1>Your Last Score</h1>
-<h2>{{ score }}</h2>
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI';
+    background: linear-gradient(135deg,#43cea2,#185a9d);
+    color: white;
+}
 
-<a href="/">Back</a>
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    width: 300px;
+}
+
+.score {
+    font-size: 60px;
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background: #00ffcc;
+    cursor: pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Your Performance 📊</h2>
+
+<div class="score">{{ score }}</div>
+
+<p>Keep improving your cloud knowledge 🚀</p>
+
+<a href="/"><button>Back Home</button></a>
+
+</div>
+
+</div>
 
 </body>
 </html>
