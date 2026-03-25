@@ -11,7 +11,6 @@ body {
     color: white;
 }
 
-/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -20,13 +19,11 @@ body {
     backdrop-filter: blur(10px);
 }
 
-/* Main container */
 .container {
     text-align: center;
     padding: 40px;
 }
 
-/* Welcome */
 .welcome {
     font-size: 32px;
     margin-bottom: 10px;
@@ -37,7 +34,6 @@ body {
     opacity: 0.8;
 }
 
-/* Cards */
 .cards {
     display: flex;
     justify-content: center;
@@ -59,7 +55,6 @@ body {
     transform: translateY(-10px) scale(1.05);
 }
 
-/* Buttons */
 .btn {
     padding: 12px 20px;
     margin-top: 15px;
@@ -74,7 +69,6 @@ body {
     background: #00ccaa;
 }
 
-/* Logout */
 .logout {
     background: #ff4d4d;
 }
@@ -83,7 +77,6 @@ body {
     background: #cc0000;
 }
 
-/* Icons */
 .icon {
     font-size: 40px;
     margin-bottom: 10px;
@@ -94,13 +87,11 @@ body {
 
 <body>
 
-<!-- Navbar -->
 <div class="navbar">
     <h2>☁️ Cloud Quiz</h2>
     <a href="/logout"><button class="btn logout">Logout</button></a>
 </div>
 
-<!-- Main -->
 <div class="container">
 
 <div class="welcome">Welcome, {{ user }} 👋</div>
@@ -111,22 +102,22 @@ body {
     <div class="card">
         <div class="icon">🧠</div>
         <h3>Start Quiz</h3>
-        <p>Challenge yourself with cloud questions</p>
-        <a href="/quiz"><button class="btn">Play Now</button></a>
+        <p>Challenge yourself</p>
+        <a href="/select"><button class="btn">Play Now</button></a>
     </div>
 
     <div class="card">
         <div class="icon">📊</div>
         <h3>Performance</h3>
-        <p>Track your quiz results</p>
-        <button class="btn">Coming Soon</button>
+        <p>Check your last score</p>
+        <a href="/performance"><button class="btn">View</button></a>
     </div>
 
     <div class="card">
         <div class="icon">⚡</div>
         <h3>Quick Tips</h3>
-        <p>Learn cloud concepts fast</p>
-        <button class="btn">Coming Soon</button>
+        <p>Learn cloud concepts</p>
+        <a href="/tips"><button class="btn">Explore</button></a>
     </div>
 
 </div>
