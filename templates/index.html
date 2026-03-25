@@ -3,14 +3,17 @@
 <head>
 <style>
 body {
-    background: #f4f4f4;
-    text-align: center;
+    text-align:center;
+    background:#f4f6ff;
 }
-button {
-    padding: 10px 20px;
-    background: blue;
-    color: white;
-    border: none;
+.btn {
+    padding:15px;
+    margin:10px;
+    background:#667eea;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
 }
 </style>
 </head>
@@ -18,8 +21,8 @@ button {
 
 <h1>Welcome {{ user }}</h1>
 
-<a href="/quiz"><button>Start Quiz</button></a>
-<a href="/logout"><button>Logout</button></a>
+<a href="/quiz"><button class="btn">Start Quiz</button></a>
+<a href="/logout"><button class="btn">Logout</button></a>
 
 </body>
 </html>
