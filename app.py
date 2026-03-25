@@ -1,11 +1,9 @@
-from flask import Flask, render_template, request, redirect, session
+from flask import Flask, render_template, request, redirect, session, url_for
 
 app = Flask(__name__)
 app.secret_key = "secret123"
 
-# User storage
 users = {}
-
 # 50 Cloud Computing Questions
 questions = [
 {"question":"What is Cloud Computing?","options":["Local storage","Internet-based computing","Hardware","None"],"answer":"Internet-based computing"},
@@ -64,11 +62,12 @@ questions = [
 {"question":"Which is CI/CD?","options":["Continuous Integration","Continuous Delivery","Both","None"],"answer":"Both"}
 ]
 
+# FORCE LOGIN EVERY TIME
 @app.route('/')
 def home():
-    if "user" in session:
-        return render_template("index.html", user=session["user"])
-    return redirect('/login')
+    if "user" not in session:
+        return redirect('/login')
+    return render_template("index.html", user=session["user"])
 
 @app.route('/login', methods=['GET','POST'])
 def login():
@@ -78,7 +77,7 @@ def login():
         if u in users and users[u] == p:
             session["user"] = u
             return redirect('/')
-        return "Invalid login"
+        return render_template("login.html", error="Invalid credentials")
     return render_template("login.html")
 
 @app.route('/signup', methods=['GET','POST'])
@@ -88,14 +87,25 @@ def signup():
         return redirect('/login')
     return render_template("signup.html")
 
+@app.route('/logout')
+def logout():
+    session.clear()   # 🔥 removes everything
+    return redirect('/login')
+
 @app.route('/quiz')
 def quiz():
+    if "user" not in session:
+        return redirect('/login')
     return render_template("quiz.html", questions=questions)
 
 @app.route('/result', methods=['POST'])
 def result():
+    if "user" not in session:
+        return redirect('/login')
+
     score = 0
     for i in range(len(questions)):
         if request.form.get(f"q{i}") == questions[i]["answer"]:
             score += 1
-    return render_template("result.html", score=score)
+
+    return render_template("result.html", score=score, total=len(questions))
