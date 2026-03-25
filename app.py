@@ -1,68 +1,68 @@
-from flask import Flask, render_template, request, redirect, session, url_for
+from flask import Flask, render_template, request, redirect, session
 
 app = Flask(__name__)
 app.secret_key = "secret123"
 
 users = {}
-# 50 Cloud Computing Questions
-questions = [
-{"question":"What is Cloud Computing?","options":["Local storage","Internet-based computing","Hardware","None"],"answer":"Internet-based computing"},
-{"question":"Which service model provides virtual machines?","options":["SaaS","PaaS","IaaS","DaaS"],"answer":"IaaS"},
-{"question":"Which model provides ready apps?","options":["IaaS","PaaS","SaaS","None"],"answer":"SaaS"},
-{"question":"Which cloud is public?","options":["AWS","Private cloud","Local server","None"],"answer":"AWS"},
-{"question":"Which company provides Azure?","options":["Google","Microsoft","Amazon","IBM"],"answer":"Microsoft"},
-{"question":"Which is a cloud platform?","options":["Windows","AWS","Linux","MS Word"],"answer":"AWS"},
-{"question":"Full form of SaaS?","options":["Software as a Service","Storage as a Service","Server as a Service","None"],"answer":"Software as a Service"},
-{"question":"Full form of PaaS?","options":["Platform as a Service","Program as a Service","Process as a Service","None"],"answer":"Platform as a Service"},
-{"question":"Full form of IaaS?","options":["Infrastructure as a Service","Internet as a Service","Input as a Service","None"],"answer":"Infrastructure as a Service"},
-{"question":"Which storage used in cloud?","options":["Block storage","Cloud storage","File storage","All"],"answer":"All"},
+scores = {}
 
-{"question":"Which service scales automatically?","options":["Cloud","Local PC","USB","None"],"answer":"Cloud"},
-{"question":"Which is cloud provider?","options":["Amazon","Google","Microsoft","All"],"answer":"All"},
-{"question":"Which deployment model is private?","options":["Private","Public","Hybrid","Community"],"answer":"Private"},
-{"question":"Hybrid cloud is combination of?","options":["Public & Private","Public only","Private only","None"],"answer":"Public & Private"},
-{"question":"Which is database service?","options":["RDS","EC2","S3","Lambda"],"answer":"RDS"},
-{"question":"Which is compute service?","options":["S3","EC2","RDS","None"],"answer":"EC2"},
-{"question":"Which is storage service?","options":["S3","EC2","Lambda","RDS"],"answer":"S3"},
-{"question":"Which AWS service is serverless?","options":["Lambda","EC2","S3","RDS"],"answer":"Lambda"},
-{"question":"Which cloud is scalable?","options":["Cloud","Laptop","Desktop","None"],"answer":"Cloud"},
-{"question":"Which uses internet?","options":["Cloud","Offline","USB","None"],"answer":"Cloud"},
-
-{"question":"Which is cloud security tool?","options":["Firewall","Antivirus","Encryption","All"],"answer":"All"},
-{"question":"Which ensures data safety?","options":["Backup","Encryption","Firewall","All"],"answer":"All"},
-{"question":"Which is cloud advantage?","options":["Scalability","Flexibility","Cost","All"],"answer":"All"},
-{"question":"Which is disadvantage?","options":["Security risk","Internet dependency","Downtime","All"],"answer":"All"},
-{"question":"Which service is Google cloud?","options":["GCP","AWS","Azure","None"],"answer":"GCP"},
-{"question":"Which is virtualization?","options":["Creating virtual machine","Deleting files","Coding","None"],"answer":"Creating virtual machine"},
-{"question":"Which tool for virtualization?","options":["VMware","VirtualBox","Hyper-V","All"],"answer":"All"},
-{"question":"Which is cloud OS?","options":["Windows","Linux","Both","None"],"answer":"Both"},
-{"question":"Which protocol used?","options":["HTTP","HTTPS","FTP","All"],"answer":"All"},
-{"question":"Which is SaaS example?","options":["Gmail","Google Docs","Dropbox","All"],"answer":"All"},
-
-{"question":"Which is PaaS example?","options":["Heroku","Google App Engine","Azure App Service","All"],"answer":"All"},
-{"question":"Which is IaaS example?","options":["AWS EC2","Azure VM","Google Compute","All"],"answer":"All"},
-{"question":"Which handles infrastructure?","options":["IaaS","PaaS","SaaS","None"],"answer":"IaaS"},
-{"question":"Which handles platform?","options":["PaaS","SaaS","IaaS","None"],"answer":"PaaS"},
-{"question":"Which handles software?","options":["SaaS","IaaS","PaaS","None"],"answer":"SaaS"},
-{"question":"Which is public cloud?","options":["AWS","Azure","GCP","All"],"answer":"All"},
-{"question":"Which is cloud region?","options":["Data center location","Country","City","None"],"answer":"Data center location"},
-{"question":"Which is load balancing?","options":["Distribute traffic","Store data","Delete data","None"],"answer":"Distribute traffic"},
-{"question":"Which ensures availability?","options":["Redundancy","Backup","Replication","All"],"answer":"All"},
-{"question":"Which is CDN?","options":["Content delivery network","Data center","Storage","None"],"answer":"Content delivery network"},
-
-{"question":"Which is cloud monitoring?","options":["CloudWatch","Nagios","Zabbix","All"],"answer":"All"},
-{"question":"Which is serverless computing?","options":["No server management","Hardware free","Manual setup","None"],"answer":"No server management"},
-{"question":"Which is elasticity?","options":["Auto scaling","Manual scaling","No scaling","None"],"answer":"Auto scaling"},
-{"question":"Which is fault tolerance?","options":["System continues working","Stops working","Deletes data","None"],"answer":"System continues working"},
-{"question":"Which is SLA?","options":["Service Level Agreement","Storage Level Access","Server Load Access","None"],"answer":"Service Level Agreement"},
-{"question":"Which is edge computing?","options":["Processing near data","Central processing","Offline","None"],"answer":"Processing near data"},
-{"question":"Which is cloud backup?","options":["Online backup","Offline backup","USB","None"],"answer":"Online backup"},
-{"question":"Which is cloud migration?","options":["Moving apps to cloud","Deleting apps","Installing apps","None"],"answer":"Moving apps to cloud"},
-{"question":"Which is DevOps?","options":["Development + Operations","Design","Testing","None"],"answer":"Development + Operations"},
-{"question":"Which is CI/CD?","options":["Continuous Integration","Continuous Delivery","Both","None"],"answer":"Both"}
+# EASY (15)
+easy = [
+{"question":"Cloud means?","options":["Internet","CPU","RAM","None"],"answer":"Internet"},
+{"question":"AWS stands for?","options":["Amazon Web Services","Web System","None","Server"],"answer":"Amazon Web Services"},
+{"question":"Cloud uses?","options":["Internet","Disk","USB","None"],"answer":"Internet"},
+{"question":"Which is SaaS?","options":["Gmail","CPU","Disk","None"],"answer":"Gmail"},
+{"question":"Azure by?","options":["Microsoft","Google","Amazon","IBM"],"answer":"Microsoft"},
+{"question":"Cloud storage?","options":["Online","Offline","USB","None"],"answer":"Online"},
+{"question":"Cloud gives?","options":["Scalability","Speed","Cost","All"],"answer":"All"},
+{"question":"Cloud access?","options":["Internet","USB","Offline","None"],"answer":"Internet"},
+{"question":"Which cloud?","options":["AWS","Laptop","USB","None"],"answer":"AWS"},
+{"question":"Cloud is?","options":["Online","Offline","Local","None"],"answer":"Online"},
+{"question":"Cloud uses?","options":["Server","USB","Cable","None"],"answer":"Server"},
+{"question":"Cloud data?","options":["Remote","Local","USB","None"],"answer":"Remote"},
+{"question":"Which is GCP?","options":["Google Cloud","Amazon","Azure","None"],"answer":"Google Cloud"},
+{"question":"Cloud benefit?","options":["Flexibility","Speed","Cost","All"],"answer":"All"},
+{"question":"Cloud service?","options":["Online","Offline","USB","None"],"answer":"Online"}
 ]
 
-# FORCE LOGIN EVERY TIME
+# MEDIUM (15)
+medium = [
+{"question":"SaaS full form?","options":["Software as a Service","None","System","Server"],"answer":"Software as a Service"},
+{"question":"PaaS full form?","options":["Platform as a Service","Program","None","Server"],"answer":"Platform as a Service"},
+{"question":"IaaS full form?","options":["Infrastructure as a Service","Internet","None","Server"],"answer":"Infrastructure as a Service"},
+{"question":"Which provides VM?","options":["IaaS","SaaS","PaaS","None"],"answer":"IaaS"},
+{"question":"Which provides apps?","options":["SaaS","PaaS","IaaS","None"],"answer":"SaaS"},
+{"question":"Which handles platform?","options":["PaaS","IaaS","SaaS","None"],"answer":"PaaS"},
+{"question":"AWS EC2 is?","options":["Compute","Storage","Network","None"],"answer":"Compute"},
+{"question":"AWS S3 is?","options":["Storage","Compute","DB","None"],"answer":"Storage"},
+{"question":"Cloud region?","options":["Data center","City","Country","None"],"answer":"Data center"},
+{"question":"Load balancing?","options":["Distribute load","Store data","Delete","None"],"answer":"Distribute load"},
+{"question":"Cloud scaling?","options":["Auto scale","Manual","None","USB"],"answer":"Auto scale"},
+{"question":"Cloud security?","options":["Encryption","Firewall","Backup","All"],"answer":"All"},
+{"question":"Virtualization?","options":["VM creation","Delete","None","USB"],"answer":"VM creation"},
+{"question":"Cloud protocol?","options":["HTTP","HTTPS","FTP","All"],"answer":"All"},
+{"question":"Cloud OS?","options":["Linux","Windows","Both","None"],"answer":"Both"}
+]
+
+# HARD (15)
+hard = [
+{"question":"AWS Lambda is?","options":["Serverless","Storage","Compute","None"],"answer":"Serverless"},
+{"question":"CDN stands for?","options":["Content Delivery Network","None","Server","Cloud"],"answer":"Content Delivery Network"},
+{"question":"CloudWatch is?","options":["Monitoring","Storage","Compute","None"],"answer":"Monitoring"},
+{"question":"Elasticity means?","options":["Auto scale","Manual","None","USB"],"answer":"Auto scale"},
+{"question":"Fault tolerance?","options":["System continues","Stops","Delete","None"],"answer":"System continues"},
+{"question":"SLA full form?","options":["Service Level Agreement","None","Server","System"],"answer":"Service Level Agreement"},
+{"question":"Edge computing?","options":["Near data","Central","Offline","None"],"answer":"Near data"},
+{"question":"Cloud migration?","options":["Move to cloud","Delete","Install","None"],"answer":"Move to cloud"},
+{"question":"DevOps?","options":["Development+Operations","Testing","Design","None"],"answer":"Development+Operations"},
+{"question":"CI/CD?","options":["Continuous Integration & Delivery","None","Server","System"],"answer":"Continuous Integration & Delivery"},
+{"question":"Hybrid cloud?","options":["Public+Private","Public","Private","None"],"answer":"Public+Private"},
+{"question":"Private cloud?","options":["Single org","Public","Hybrid","None"],"answer":"Single org"},
+{"question":"Public cloud?","options":["Shared","Private","None","Local"],"answer":"Shared"},
+{"question":"Cloud backup?","options":["Online","Offline","USB","None"],"answer":"Online"},
+{"question":"Cloud monitoring?","options":["Tracking","Deleting","None","USB"],"answer":"Tracking"}
+]
+
 @app.route('/')
 def home():
     if "user" not in session:
@@ -77,7 +77,7 @@ def login():
         if u in users and users[u] == p:
             session["user"] = u
             return redirect('/')
-        return render_template("login.html", error="Invalid credentials")
+        return "Invalid login"
     return render_template("login.html")
 
 @app.route('/signup', methods=['GET','POST'])
@@ -89,23 +89,46 @@ def signup():
 
 @app.route('/logout')
 def logout():
-    session.clear()   # 🔥 removes everything
+    session.clear()
     return redirect('/login')
 
-@app.route('/quiz')
-def quiz():
-    if "user" not in session:
-        return redirect('/login')
-    return render_template("quiz.html", questions=questions)
+@app.route('/select')
+def select():
+    return render_template("select.html")
+
+@app.route('/quiz/<level>')
+def quiz(level):
+    if level == "easy":
+        q = easy
+    elif level == "medium":
+        q = medium
+    else:
+        q = hard
+
+    session["questions"] = q
+    return render_template("quiz.html", questions=q)
 
 @app.route('/result', methods=['POST'])
 def result():
-    if "user" not in session:
-        return redirect('/login')
-
+    q = session.get("questions", [])
     score = 0
-    for i in range(len(questions)):
-        if request.form.get(f"q{i}") == questions[i]["answer"]:
+
+    for i in range(len(q)):
+        if request.form.get(f"q{i}") == q[i]["answer"]:
             score += 1
 
-    return render_template("result.html", score=score, total=len(questions))
+    scores[session["user"]] = score
+    return render_template("result.html", score=score, total=len(q))
+
+@app.route('/performance')
+def performance():
+    user = session["user"]
+    user_score = scores.get(user, 0)
+    return render_template("performance.html", score=user_score)
+
+@app.route('/tips')
+def tips():
+    return render_template("tips.html")
+
+if __name__ == "__main__":
+    app.run()
